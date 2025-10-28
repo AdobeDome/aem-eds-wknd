@@ -10,7 +10,7 @@ function sortItemsByLastModified(items) {
   });
 }
 
-async function loadContentFragments(apiPathOrUrl) {
+async function loadContentFragments(queryValue) {
   const { hostname } = window.location;
   // Use relative path for AEM author or publish domains
   const isAemCloud = hostname.includes('author-p131074-e1277685.adobeaemcloud.com') ||
@@ -21,7 +21,7 @@ async function loadContentFragments(apiPathOrUrl) {
   const apiBase = isAemCloud
     ? ''
     : 'https://publish-p131074-e1277685.adobeaemcloud.com';
-  const apiUrl = `${apiBase}/graphql/execute.json/ref-demo-eds/ContactCardsList`;
+  const apiUrl = `${apiBase}/graphql/execute.json/ref-demo-eds/ContactCardsList;folderPath=${queryValue}`;
   const cfFolder = await fetch(apiUrl);
   const cfFolderData = await cfFolder.json();
   const cfItems = Object.values(cfFolderData?.data)?.[0]?.items;
@@ -39,21 +39,11 @@ function getBlockPropValue(block, propName, order) {
   return '';
 }
 
-function getCurrentUser() {
-  try {
-    return JSON.parse(localStorage.getItem('mockUserSession'));
-  } catch {
-    return null;
-  }
-}
-
 export default function decorate(block) {
   // Get configuration from block attributes or sequential divs.
-  const apiPathOrUrl = getBlockPropValue(block, 'reference', 0);
-  const layout = getBlockPropValue(block, 'layout', 1) || 'verticle';
-  const customStyle = getBlockPropValue(block, 'customStyle', 2);
+  const queryValue = getBlockPropValue(block, 'reference', 0);
 
-  if (!apiPathOrUrl) return;
+  if (!queryValue) return;
 
   // Responsive columns for grid
   function getResponsiveColumns() {
@@ -70,7 +60,7 @@ export default function decorate(block) {
   // Card-based slide structure
   function createSlide(item) {
     const card = document.createElement('div');
-    card.classList.add('contact-cards-card', layout);
+    card.classList.add('contact-cards-card');
     card.innerHTML = `
       <div class="contact-cards-card-image">
         <img src="${item.image._publishUrl}" alt="${item.title}" loading="eager" />
@@ -110,11 +100,11 @@ export default function decorate(block) {
   (async () => {
     try {
       // Fetch and process data
-      const cfItems = await loadContentFragments(apiPathOrUrl);
+      const cfItems = await loadContentFragments(queryValue);
       allItems = cfItems;
       render();
 
-      if (customStyle) block.classList.add(customStyle);
+      // No customStyle authoring; keep block classnames minimal
 
       // Responsive: update grid columns on resize
       window.addEventListener('resize', () => {
