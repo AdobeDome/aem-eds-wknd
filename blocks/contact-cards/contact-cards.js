@@ -21,7 +21,7 @@ async function loadContentFragments(cfQueryPath) {
   const apiBase = isAemCloud
     ? ''
     : 'https://publish-p131074-e1277685.adobeaemcloud.com';
-  const apiUrl = `${apiBase}/graphql/execute.json/ref-demo-eds/${cfQueryPath}`; // ContactCardsList
+  const apiUrl = `https://author-p131074-e1277685.adobeaemcloud.com/graphql/execute.json/ref-demo-eds/${cfQueryPath}`; // ContactCardsList
   const cfFolder = await fetch(apiUrl);
   const cfFolderData = await cfFolder.json();
   const cfItems = Object.values(cfFolderData?.data)?.[0]?.items;
