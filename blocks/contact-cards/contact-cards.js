@@ -10,7 +10,7 @@ function sortItemsByLastModified(items) {
   });
 }
 
-async function loadContentFragments(cfQueryPath) {
+async function loadContentFragments(apiPathOrUrl) {
   const { hostname } = window.location;
   // Use relative path for AEM author or publish domains
   const isAemCloud = hostname.includes('author-p131074-e1277685.adobeaemcloud.com') ||
@@ -21,7 +21,7 @@ async function loadContentFragments(cfQueryPath) {
   const apiBase = isAemCloud
     ? ''
     : 'https://publish-p131074-e1277685.adobeaemcloud.com';
-  const apiUrl = `https://author-p131074-e1277685.adobeaemcloud.com/graphql/execute.json/ref-demo-eds/${cfQueryPath}`; // ContactCardsList
+  const apiUrl = `${apiBase}/graphql/execute.json/ref-demo-eds/ContactCardsList`;
   const cfFolder = await fetch(apiUrl);
   const cfFolderData = await cfFolder.json();
   const cfItems = Object.values(cfFolderData?.data)?.[0]?.items;
@@ -49,11 +49,11 @@ function getCurrentUser() {
 
 export default function decorate(block) {
   // Get configuration from block attributes or sequential divs.
-  const cfFolderPath = getBlockPropValue(block, 'reference', 0);
+  const apiPathOrUrl = getBlockPropValue(block, 'reference', 0);
   const layout = getBlockPropValue(block, 'layout', 1) || 'verticle';
   const customStyle = getBlockPropValue(block, 'customStyle', 2);
 
-  if (!cfFolderPath) return;
+  if (!apiPathOrUrl) return;
 
   // Responsive columns for grid
   function getResponsiveColumns() {
@@ -110,7 +110,7 @@ export default function decorate(block) {
   (async () => {
     try {
       // Fetch and process data
-      const cfItems = await loadContentFragments(cfFolderPath);
+      const cfItems = await loadContentFragments(apiPathOrUrl);
       allItems = cfItems;
       render();
 
