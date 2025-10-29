@@ -69,8 +69,7 @@ main .contact-cards div.contact-cards-text .button {
   * {
     box-sizing: border-box;
   }
-  background: #fff;
-  border-radius: 18px;
+  background: #f3f3f2cc;
   border: 1px solid #e5e5e5;
   box-shadow: 0 0 7px rgba(0,0,0,0.10);
   display: flex;
@@ -128,7 +127,7 @@ main .contact-cards div.contact-cards-text .button {
 
 .contact-cards-card-btn {
   background: transparent;
-  color: var(--link-color);
+  color: #00a19f;
   border: none;
   border-radius: 0;
   padding: 0;
