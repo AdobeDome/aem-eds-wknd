@@ -23,6 +23,13 @@
       "id": "section",
       "fields": [
         {
+          "component": "text",
+          "name": "name",
+          "value": "",
+          "label": "Name",
+          "valueType": "string"
+        },
+        {
           "component": "select",
           "name": "sec-spacing",
           "value": "",
