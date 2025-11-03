@@ -191,6 +191,12 @@
     "id": "section",
     "fields": [
       {
+        "component": "text",
+        "name": "name",
+        "label": "Section Name",
+        "valueType": "string"
+      },
+      {
         "component": "select",
         "name": "sec-spacing",
         "value": "",
