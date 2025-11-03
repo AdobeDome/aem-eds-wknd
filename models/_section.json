@@ -23,6 +23,12 @@
       "id": "section",
       "fields": [
         {
+          "component": "text",
+          "name": "name",
+          "label": "Section Name",
+          "valueType": "string"
+        },
+        {
           "component": "select",
           "name": "sec-spacing",
           "value": "",
@@ -160,23 +166,30 @@
     {
       "id": "section",
       "components": [
-	      "button",
-      	"cards",
-      	"carousel",
-      	"columns",
-      	"contentfragment",
-      	"dm-asset",
-      	"dm-template",
-      	"fragment",
-      	"hero",
-      	"iframe",
-      	"image",
-      	"teaser",
-      	"text",
-      	"title",
-      	"video",
+        "button",
+        "action-button",
+        "cards",
+        "carousel",
+        "columns",
+        "contentfragment",
+        "contact-cards",
+        "button",
+        "dm-asset",
+        "dm-template",
+        "fragment",
+        "hero",
+        "image",
+        "teaser",
+        "text",
+        "title",
+        "video",
+        "search",
+        "separator",
         "form",
-        "embed-adaptive-form"
+        "forex",
+        "accordion",
+        "embed-adaptive-form",
+        "find-a-doctor"
       ]
     }
   ]

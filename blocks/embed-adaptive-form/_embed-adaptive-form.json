@@ -17,21 +17,21 @@
       }
     ],
     "models": [
-        {
-            "id": "embed-adaptive-form",
-            "fields": [
-              {
-                  "component": "aem-content",
-                  "valueType": "string",
-                  "name": "formPath",
-                  "value": "",
-                  "label": "Form Path",
-                  "validation": {
-                    "rootPath": "/content/forms/af"
-                  }
-              }
-          ]
-        }
+      {
+        "id": "embed-adaptive-form",
+        "fields": [
+          {
+            "component": "aem-content",
+            "valueType": "string",
+            "name": "formPath",
+            "value": "",
+            "label": "Form Path",
+            "validation": {
+              "rootPath": "/content/forms/af"
+            }
+          }
+        ]
+      }
     ],
     "filters": []
 }

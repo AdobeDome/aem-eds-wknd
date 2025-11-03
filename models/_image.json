@@ -2,12 +2,15 @@
   "definitions": [
     {
       "title": "Image",
-      "id": "image",
+      "id": "form-image",
       "plugins": {
         "xwalk": {
           "page": {
-            "resourceType": "core/franklin/components/image/v1/image",
-            "template": {}
+            "resourceType": "core/fd/components/form/image/v1/image",
+            "template": {
+              "jcr:title": "Image",
+              "fieldType": "image"
+            }
           }
         }
       }

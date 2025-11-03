@@ -15,8 +15,8 @@
                 "sling:resourceType": "core/franklin/components/block/v1/block/item",
                 "name": "Card",
                 "model": "card",
-                "image": "/content/dam/wknd-universal/images/placeholder-black.png",
-                "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit nunc a felis dapibus, et placerat lorem ullamcorper. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>"
+                "image": "/content/dam/wknd-universal/wknd-banner.jpeg",
+                "text": "<p>Explore WKND - is sample website project, used as a reference to highlight AEM’s best practices, including Universal Editor with EDS. It’s a fictitious “Weekend” travel website.</p>"
               }
             }
           }

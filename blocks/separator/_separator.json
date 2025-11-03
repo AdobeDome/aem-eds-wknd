@@ -1,0 +1,75 @@
+{
+  "definitions": [
+    {
+      "title": "Separator",
+      "id": "separator",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Separator",
+              "model": "separator"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "separator",
+      "fields": [
+        {
+          "component": "select",
+          "name": "style",
+          "label": "Style",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "default",
+              "value": ""
+            },
+            {
+              "name": "Light",
+              "value": "light"
+            },
+            {
+              "name": "Dark",
+              "value": "dark"
+            },
+            {
+              "name": "Hidden",
+              "value": "hidden"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "spacing",
+          "label": "Spacing",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "default",
+              "value": ""
+            },
+            {
+              "name": "Small",
+              "value": "small"
+            },
+            {
+              "name": "Medium",
+              "value": "medium"
+            },
+            {
+              "name": "Large",
+              "value": "large"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

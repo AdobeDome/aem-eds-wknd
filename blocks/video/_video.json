@@ -21,13 +21,14 @@
     {
       "id": "video",
       "fields": [
-          {
-            "component": "text",
-            "valueType": "string",
-            "required": true,
-            "name": "videoUrl",
-            "label": "Video Url"
-          }        
+        {
+         "component": "text",
+         "valueType": "string",
+         "required": true,
+         "description" : "Any direct full URL of publicly available video. e.g. video URL of aem publish instance, Dynamic Media etc.",
+         "name": "videoUrl",
+         "label": "Video Url"
+        }
       ]
     }
   ],

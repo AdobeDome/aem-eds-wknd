@@ -47,11 +47,10 @@
     {
       "id": "column",
       "components": [
-        "text",
-        "image",
         "button",
+        "image",
+        "text",      
         "title",
-        "dm-asset",
         "video"
       ]
     }

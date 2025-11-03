@@ -61,12 +61,8 @@
           "name": "dataSourceType",
           "label": "Data Source Type",
           "valueType": "string",
-          "value": "dam-json",
+          "value": "content-fragments",
           "options": [
-            {
-              "name": "JSON File from DAM",
-              "value": "dam-json"
-            },
             {
               "name": "Content Fragments",
               "value": "content-fragments"
@@ -74,46 +70,20 @@
             {
               "name": "External API",
               "value": "api"
-            },
-            {
-              "name": "Static JSON",
-              "value": "json"
             }
           ]
         },
-        {
-          "component": "aem-content",
-          "name": "damJsonPath",
-          "label": "JSON File Path",
-          "description": "Select JSON file from DAM",
-          "valueType": "string",
-          "validation": {
-            "rootPath": "/content/dam"
+          {
+            "component": "aem-content",
+            "name": "contentFragmentFolder",
+            "label": "Content Fragment Folder",
+            "description": "Select folder containing multiple doctor Content Fragments",
+            "valueType": "string",
+            "validation": {
+              "rootPath": "/content/dam"
+            },
+            "condition": { "==": [{ "var": "dataSourceType" }, "content-fragments"] }
           },
-          "condition": { "==": [{ "var": "dataSourceType" }, "dam-json"] }
-        },
-        {
-          "component": "aem-content",
-          "name": "contentFragmentFolder",
-          "label": "Content Fragment Folder",
-          "description": "Select folder containing multiple doctor Content Fragments",
-          "valueType": "string",
-          "validation": {
-            "rootPath": "/content/dam"
-          },
-          "condition": { "==": [{ "var": "dataSourceType" }, "content-fragments"] }
-        },
-        {
-          "component": "aem-content",
-          "name": "contentFragmentFolder",
-          "label": "Content Fragment Folder",
-          "description": "Select folder containing multiple doctor Content Fragments",
-          "valueType": "string",
-          "validation": {
-            "rootPath": "/content/dam"
-          },
-          "condition": { "==": [{ "var": "dataSourceType" }, "content-fragments"] }
-        },
         {
           "component": "text",
           "valueType": "string",
@@ -121,15 +91,6 @@
           "label": "API URL",
           "description": "External API endpoint for doctor data",
           "condition": { "==": [{ "var": "dataSourceType" }, "api"] }
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "staticJsonPath",
-          "label": "Static JSON Path",
-          "description": "Path to static JSON file",
-          "value": "/data/doctors.json",
-          "condition": { "==": [{ "var": "dataSourceType" }, "json"] }
         },
         {
           "component": "boolean",
@@ -151,6 +112,21 @@
           "label": "Enable Provider Name Search",
           "value": "true",
           "valueType": "boolean"
+        },
+        {
+          "component": "boolean",
+          "name": "enableSubmitAction",
+          "label": "Enable Submit Action",
+          "value": "true",
+          "valueType": "boolean"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "submitUrl",
+          "label": "Submit URL",
+          "description": "URL to redirect to when Book Appointment is clicked (if Submit Action is enabled)",
+          "condition": { "==": [{ "var": "enableSubmitAction" }, true] }
         }
       ]
     }

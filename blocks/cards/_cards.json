@@ -51,22 +51,51 @@
         },
         {
           "component": "select",
-          "name": "ctastyle",
-          "label": "CTA Style",
-          "valueType": "string",
-          "value": "button",
+          "name": "style",
+          "label": "Style",
           "options": [
             {
+              "name": "default",
+              "value": ""
+            },
+            {
+              "name": "Image Top",
+              "value": "image-top"
+            },
+            {
+              "name": "Image Bottom",
+              "value": "image-bottom"
+            },
+            {
+              "name": "Teaser Overlay",
+              "value": "teaser-overlay"
+            },
+            {
+              "name": "Teaser Card",
+              "value": "teaser-card"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "ctastyle",
+          "label": "CTA Style",
+          "options": [
+           {
+              "name": "Link",
+              "value": "cta-link"
+            },
+            {
               "name": "Primary Button",
-              "value": "button"
+              "value": "cta-button"
             },
             {
               "name": "Secondary Button",
-              "value": "button-secondary"
+              "value": "cta-button-secondary"
             },
             {
               "name": "Dark Button",
-              "value": "button-dark"
+              "value": "cta-button-dark"
             }
           ]
         }
