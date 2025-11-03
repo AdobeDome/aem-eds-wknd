@@ -9,25 +9,45 @@
     "id": "section",
     "components": [
       "button",
+      "action-button",
       "cards",
       "carousel",
       "columns",
       "contentfragment",
+      "contact-cards",
+      "button",
       "dm-asset",
       "dm-template",
       "fragment",
       "hero",
-      "iframe",
       "image",
-      "search",
       "teaser",
       "text",
       "title",
-      "video"
+      "video",
+      "search",
+      "separator",
+      "form",
+      "forex",
+      "accordion",
+      "embed-adaptive-form",
+      "find-a-doctor"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
     ]
   },
   {
     "id": "cards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "carousel",
     "components": [
       "card"
     ]
@@ -42,12 +62,40 @@
     "id": "column",
     "components": [
       "button",
-      "dm-asset",
-      "dm-template",
       "image",
       "text",
       "title",
       "video"
+    ]
+  },
+  {
+    "id": "form",
+    "components": [
+      "captcha",
+      "checkbox",
+      "checkbox-group",
+      "date-input",
+      "drop-down",
+      "email",
+      "file-input",
+      "form-accordion",
+      "form-button",
+      "form-fragment",
+      "form-image",
+      "form-modal",
+      "form-reset-button",
+      "form-submit-button",
+      "number-input",
+      "panel",
+      "password",
+      "plain-text",
+      "radio-group",
+      "rating",
+      "telephone-input",
+      "text-input",
+      "tnc",
+      "wizard",
+      "range"
     ]
   }
 ]
