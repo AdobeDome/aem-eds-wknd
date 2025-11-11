@@ -57,7 +57,7 @@
             },
               "component": "text",
               "name": "dmUrl",
-              "value": "https://smartimaging.scene7.com/is/image/DynamicMediaNA",
+              "value": "https://s7g10.scene7.com/is/image/DominikCo",
               "label": "Dynamic Media URL",
               "valueType": "string"
           },
