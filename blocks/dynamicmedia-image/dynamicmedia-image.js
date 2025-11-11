@@ -47,7 +47,7 @@ export default function decorate(block) {
           let imageName = imageSrc.split("/").pop().split(".")[0];
         
           
-          let dmUrl = dmUrlEl?.getAttribute("href") || "https://smartimaging.scene7.com/is/image/DynamicMediaNA";
+          let dmUrl = dmUrlEl?.getAttribute("href") || "https://s7g10.scene7.com/is/image/DominikCo";
         
           imageEl.setAttribute("data-src", dmUrl + (dmUrl.endsWith('/') ? "" : "/") + imageName);
           //imageEl.setAttribute("src", dmUrl + (dmUrl.endsWith('/') ? "" : "/") + imageName);
